@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.GameModes;
+using Afired.PartyGame.Sessions;
 using Afired.Utils.Editor.GameManager;
 using UnityEditor;
 

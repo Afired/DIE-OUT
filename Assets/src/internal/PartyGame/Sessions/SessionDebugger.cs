@@ -1,7 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace Afired.GameManagement.Sessions {
+namespace Afired.PartyGame.Sessions {
     
     //TODO: refactor to editor window
     [InfoBox("No session has been created yet", VisibleIf = "@_current == null && EditorApplication.isPlaying")]

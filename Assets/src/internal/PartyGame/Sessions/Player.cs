@@ -1,10 +1,10 @@
 ﻿using System;
-using Afired.GameManagement.Characters;
+using Afired.PartyGame.Characters;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine.InputSystem;
 
-namespace Afired.GameManagement.Sessions {
+namespace Afired.PartyGame.Sessions {
 
     public delegate void OnScoreChanged();
     

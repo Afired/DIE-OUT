@@ -1,7 +1,6 @@
-using System;
-using Afired.GameManagement;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.Sessions;
 using DieOut.GameModes.Interactions;
 using UnityEngine;
 using UnityEngine.UI;

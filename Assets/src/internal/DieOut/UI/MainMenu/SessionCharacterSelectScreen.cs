@@ -1,5 +1,5 @@
 ﻿using System;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using Afired.UI;
 using DieOut.UI.CharacterSelect;
 using UnityEngine;

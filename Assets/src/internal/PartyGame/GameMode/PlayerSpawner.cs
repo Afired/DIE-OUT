@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using Sirenix.OdinInspector;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     /// <summary>
     /// abstract base class for a player spawner of a game mode

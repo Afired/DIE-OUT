@@ -1,4 +1,4 @@
-﻿namespace Afired.GameManagement.Characters {
+﻿namespace Afired.PartyGame.Characters {
     
     /// <summary>
     /// interface for custom injection of ItemPosition component

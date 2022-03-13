@@ -1,8 +1,8 @@
-﻿using Afired.GameManagement.Characters;
+﻿using Afired.PartyGame.Characters;
 using Afired.Utils.Helper;
 using UnityEngine;
 
-namespace Afired.GameManagement.Sessions {
+namespace Afired.PartyGame.Sessions {
     
     /// <summary>
     /// singleton register for all characters

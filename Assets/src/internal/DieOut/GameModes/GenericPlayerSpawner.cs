@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.GameModes;
+using Afired.PartyGame.Sessions;
 using DieOut.GameModes.Interactions;
 using UnityEngine;
 

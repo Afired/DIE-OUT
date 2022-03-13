@@ -2,7 +2,7 @@
 using Afired.Utils.Helper;
 using UnityEngine;
 
-namespace Afired.GameManagement.Sessions {
+namespace Afired.PartyGame.Sessions {
     
     public class SceneRegister : MonoBehaviour {
 

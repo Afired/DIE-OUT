@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Afired.GameManagement.GameModes;
 using System.Linq;
+using Afired.PartyGame.GameModes;
 using DieOut.GameModes.Interactions;
 
 namespace DieOut.GameModes.Beerenbusch {

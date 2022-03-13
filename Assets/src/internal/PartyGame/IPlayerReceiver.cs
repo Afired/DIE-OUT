@@ -1,6 +1,6 @@
-﻿using Afired.GameManagement.Sessions;
+﻿using Afired.PartyGame.Sessions;
 
-namespace Afired.GameManagement {
+namespace Afired.PartyGame {
     
     public interface IPlayerReceiver {
         

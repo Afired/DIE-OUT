@@ -1,4 +1,4 @@
-﻿using Afired.GameManagement.Characters;
+﻿using Afired.PartyGame.Characters;
 using UnityEngine;
 
 namespace DieOut.UI.CharacterSelect {

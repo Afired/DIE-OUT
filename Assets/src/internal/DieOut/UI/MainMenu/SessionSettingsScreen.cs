@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.GameModes;
+using Afired.PartyGame.Sessions;
 using Afired.UI.Elements;
 using DieOut.UI.CharacterSelect;
 using Sirenix.OdinInspector;

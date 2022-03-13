@@ -1,7 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Afired.GameManagement.Characters {
+namespace Afired.PartyGame.Characters {
     
     [CreateAssetMenu]
     public class Character : SerializedScriptableObject {

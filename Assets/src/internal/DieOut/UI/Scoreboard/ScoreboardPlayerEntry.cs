@@ -1,5 +1,5 @@
 ﻿using System;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using TMPro;
 using UnityEngine;
 

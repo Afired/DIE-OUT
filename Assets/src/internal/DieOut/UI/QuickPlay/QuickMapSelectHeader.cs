@@ -1,4 +1,4 @@
-﻿using Afired.GameManagement.GameModes;
+﻿using Afired.PartyGame.GameModes;
 using TMPro;
 using UnityEngine;
 

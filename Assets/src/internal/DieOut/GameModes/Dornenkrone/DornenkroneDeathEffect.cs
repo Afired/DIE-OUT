@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using UnityEngine;
 
 namespace DieOut.GameModes {

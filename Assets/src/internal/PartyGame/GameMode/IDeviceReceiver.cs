@@ -1,6 +1,6 @@
 ﻿using UnityEngine.InputSystem;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     /// <summary>
     /// interface for custom injection of input devices

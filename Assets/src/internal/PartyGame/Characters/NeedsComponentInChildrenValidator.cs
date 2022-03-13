@@ -1,11 +1,11 @@
 ﻿#if UNITY_EDITOR
 using System;
-using Afired.GameManagement.Characters;
+using Afired.PartyGame.Characters;
 using Sirenix.OdinInspector.Editor.Validation;
 using UnityEngine;
 
 [assembly: RegisterValidator(typeof(NeedsComponentInChildrenValidator))]
-namespace Afired.GameManagement.Characters {
+namespace Afired.PartyGame.Characters {
     
     public class NeedsComponentInChildrenValidator : AttributeValidator<NeedsComponentInChildren, GameObject> {
         

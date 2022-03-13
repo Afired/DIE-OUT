@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Afired.GameManagement.GameModes;
+using Afired.PartyGame.GameModes;
 using DieOut.UI.CharacterSelect;
 using UnityEngine.InputSystem;
 
-namespace Afired.GameManagement.Sessions {
+namespace Afired.PartyGame.Sessions {
     
     [Serializable]
     public class SessionBuilder {

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using DieOut.GameModes.Dornenkrone;
 using DieOut.GameModes.Beerenbusch;
-using Afired.GameManagement.Characters;
+using Afired.PartyGame.Characters;
 
 namespace DieOut.GameModes.Interactions {
     public class Tackleable : MonoBehaviour, IAnimatorReceiver {

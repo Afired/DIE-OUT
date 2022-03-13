@@ -1,4 +1,4 @@
-﻿using Afired.GameManagement.Sessions;
+﻿using Afired.PartyGame.Sessions;
 using Afired.UI;
 using UnityEngine;
 using Screen = Afired.UI.Screen;

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Afired.GameManagement.GameModes;
+using Afired.PartyGame.GameModes;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;

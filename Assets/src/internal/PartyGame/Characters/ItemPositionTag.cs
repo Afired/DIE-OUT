@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Afired.GameManagement.Characters {
+namespace Afired.PartyGame.Characters {
     
     public class ItemPositionTag : MonoBehaviour {
         

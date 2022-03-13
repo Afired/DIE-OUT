@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Afired.GameManagement.Characters {
+namespace Afired.PartyGame.Characters {
     
     [AttributeUsage(AttributeTargets.Field)]
     public class NeedsComponentInChildren : Attribute {

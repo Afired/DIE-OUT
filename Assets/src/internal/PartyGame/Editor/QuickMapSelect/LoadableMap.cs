@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.GameModes;
+using Afired.PartyGame.Sessions;
 using Sirenix.OdinInspector;
 using UnityEngine.InputSystem;
 

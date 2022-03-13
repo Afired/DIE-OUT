@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.Sessions;
 using Afired.UI.Elements;
 using Sirenix.OdinInspector;
 using UnityEngine;

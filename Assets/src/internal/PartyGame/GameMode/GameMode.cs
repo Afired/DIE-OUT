@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     [CreateAssetMenu]
     public class GameMode : ScriptableObject {

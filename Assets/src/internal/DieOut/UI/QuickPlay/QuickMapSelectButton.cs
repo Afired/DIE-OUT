@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.GameModes;
+using Afired.PartyGame.Sessions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;

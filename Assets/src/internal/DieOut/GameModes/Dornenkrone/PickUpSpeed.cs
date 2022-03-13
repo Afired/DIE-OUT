@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using DieOut.GameModes.Interactions;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System.Linq;
-using Afired.GameManagement.GameModes;
 
 namespace DieOut.GameModes.Dornenkrone {
     public class PickUpSpeed : MonoBehaviour {

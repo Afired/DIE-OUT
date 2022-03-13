@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using UnityAsync;
 using UnityEngine;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     [RequireComponent(typeof(Animation))]
     public class Countdown : MonoBehaviour {

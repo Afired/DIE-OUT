@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.Sessions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

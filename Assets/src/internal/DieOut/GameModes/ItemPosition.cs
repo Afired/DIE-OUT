@@ -1,4 +1,4 @@
-using Afired.GameManagement.Characters;
+using Afired.PartyGame.Characters;
 using DieOut.GameModes.Dornenkrone;
 using DieOut.GameModes.Beerenbusch;
 using UnityEngine;

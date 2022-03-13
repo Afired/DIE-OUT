@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using Afired.SceneManagement;
 using Sirenix.OdinInspector;
 using UnityAsync;

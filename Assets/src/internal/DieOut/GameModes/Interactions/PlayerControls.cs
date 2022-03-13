@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.GameModes;
+﻿using System.Collections;
+using Afired.PartyGame.Characters;
+using Afired.PartyGame.GameModes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

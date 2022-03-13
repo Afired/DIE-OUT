@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using UnityEngine;
 
 namespace DieOut.GameModes {

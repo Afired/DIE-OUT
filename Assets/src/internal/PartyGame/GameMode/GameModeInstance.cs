@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Afired.GameManagement.Sessions;
+using Afired.PartyGame.Sessions;
 using Afired.SceneManagement;
 using Afired.Utils.Helper;
 using UnityEngine;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     public class GameModeInstance {
         

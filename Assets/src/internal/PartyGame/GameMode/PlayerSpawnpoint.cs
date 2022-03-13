@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Afired.GameManagement.GameModes {
+namespace Afired.PartyGame.GameModes {
     
     public class PlayerSpawnpoint : MonoBehaviour {
         
