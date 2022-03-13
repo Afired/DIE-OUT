@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Helper {
     
     /// <summary>
     /// task based "event callback" that can be either async or sync awaited when invoked

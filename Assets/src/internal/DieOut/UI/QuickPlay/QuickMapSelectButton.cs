@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Afired.GameManagement.GameModes;
 using Afired.GameManagement.Sessions;
-using Afired.Helper;
-using DieOut.UI.CharacterSelect;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;

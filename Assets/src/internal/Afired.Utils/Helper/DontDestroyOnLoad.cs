@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Helper {
     
     public class DontDestroyOnLoad : MonoBehaviour {
         

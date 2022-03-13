@@ -1,5 +1,5 @@
-﻿using Afired.Helper;
-using Afired.SceneManagement;
+﻿using Afired.SceneManagement;
+using Afired.Utils.Helper;
 using UnityEngine;
 
 namespace Afired.GameManagement.Sessions {

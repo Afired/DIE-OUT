@@ -1,3 +1,4 @@
+using Afired.Utils.Extensions;
 using UnityEngine;
 
 namespace DieOut.GameModes {

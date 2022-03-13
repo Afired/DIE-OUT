@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Extensions {
     
     public static class CameraExtension {
-        
         
         public static Vector3 GetContactPosOfMousePosToPlane(this Camera camera, Vector2 mousePosition, Vector3 planeOrigin, Vector3 planeNormal) {
             Ray ray = camera.ScreenPointToRay(mousePosition);

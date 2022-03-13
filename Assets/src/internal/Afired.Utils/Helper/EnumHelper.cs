@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Helper {
     
     /// <summary>
     /// helper class for useful enum functions

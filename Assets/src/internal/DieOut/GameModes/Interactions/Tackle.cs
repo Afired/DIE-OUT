@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Afired.GameManagement.Characters;
 using UnityEngine.InputSystem;
 using Afired.GameManagement.GameModes;
-using Afired.Helper;
 using DieOut.GameModes.Dornenkrone;
 using UnityEngine;
 

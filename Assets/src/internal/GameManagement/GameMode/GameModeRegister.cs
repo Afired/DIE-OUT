@@ -1,4 +1,4 @@
-﻿using Afired.Helper;
+﻿using Afired.Utils.Helper;
 using UnityEngine;
 
 namespace Afired.GameManagement.GameModes {

@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Helper {
     
     [InlineProperty(LabelWidth = 50)]
     [Serializable]

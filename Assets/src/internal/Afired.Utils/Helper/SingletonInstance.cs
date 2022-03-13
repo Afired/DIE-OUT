@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Afired.Helper {
+namespace Afired.Utils.Helper {
     
     /// <summary>
     /// helper struct for easy singleton pattern

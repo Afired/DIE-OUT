@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Afired.Helper;
+using Afired.Utils.Helper;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityAsync;
