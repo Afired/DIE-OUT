@@ -5,13 +5,13 @@ using Afired.PartyGame.Sessions;
 using Afired.Utils.Editor.GameManager;
 using UnityEditor;
 
-namespace DieOut.DieOut.Editor {
+namespace Afired.PartyGame.Editor {
     
-    public class DieOutGameManager : GameManagerEditorWindow {
+    public class PartyGameAssetManagerWindow : GameManagerEditorWindow {
         
         [MenuItem("DieOut/Game Manager")]
         public static void OpenWindow() {
-            GetWindow<DieOutGameManager>("Game Manager").Show();
+            GetWindow<PartyGameAssetManagerWindow>("Game Manager").Show();
         }
         
         protected override void Init(out IEnumerable<IGameManagerTab> gameManagerTabs) {

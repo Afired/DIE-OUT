@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 
-namespace DieOut.Editor {
+namespace Afired.PartyGame.Editor.SceneAutoLoader {
 	
     /// <summary>
     /// Based on an idea on this thread:

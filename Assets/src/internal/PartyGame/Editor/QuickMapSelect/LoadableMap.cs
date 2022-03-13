@@ -5,7 +5,7 @@ using Afired.PartyGame.Sessions;
 using Sirenix.OdinInspector;
 using UnityEngine.InputSystem;
 
-namespace DieOut.Editor {
+namespace Afired.PartyGame.Editor.QuickMapSelect {
     
     [Serializable]
     public struct LoadableMap {

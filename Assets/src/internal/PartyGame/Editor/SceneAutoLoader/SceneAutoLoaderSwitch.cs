@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityToolbarExtender;
 
-namespace DieOut.Editor {
+namespace Afired.PartyGame.Editor.SceneAutoLoader {
     
     public static class ToolbarStyles {
         public static readonly GUIStyle commandButtonStyle;

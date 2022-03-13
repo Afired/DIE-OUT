@@ -5,7 +5,7 @@ using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace DieOut.Editor {
+namespace Afired.PartyGame.Editor.QuickMapSelect {
     
     [InfoBox("This will show a selection of all maps once in play mode", VisibleIf = "@!EditorApplication.isPlaying")]
     [InfoBox("Startup Scene hasn't been initialized - Start Play Mode with Auto Scene Loader enabled", VisibleIf = "@EditorApplication.isPlaying && !StartUp.HasBeenLoaded")]

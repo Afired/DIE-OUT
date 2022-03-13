@@ -4,7 +4,7 @@ using Afired.PartyGame.GameModes;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace DieOut.Editor {
+namespace Afired.PartyGame.Editor.QuickMapSelect {
     
     [Serializable]
     public struct GameModeMapCollection {
