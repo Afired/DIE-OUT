@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace DieOut.Editor {
+namespace Afired.Utils.Editor {
     
     public static class EditorSerialization {
         
