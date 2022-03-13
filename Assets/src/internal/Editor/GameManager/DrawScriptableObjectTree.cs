@@ -1,20 +1,22 @@
 ﻿using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
 
 namespace DieOut.Editor.GameManager {
     
-    public class DrawScriptableObjectTree<T> where T : ScriptableObject {
+    public class DrawScriptableObjectTree<T> : IGameManagerTab where T : ScriptableObject {
         
+        public string TabName { get; }
+        public bool ShouldDrawEditor => true;
+        public bool ShouldDrawBaseMenu => true;
         [InlineEditor(InlineEditorObjectFieldModes.CompletelyHidden)]
         [SerializeField] private T _selected;
         [LabelWidth(100)] [PropertyOrder(-2)] [HorizontalGroup("CreateNew")]
         [SerializeField] private string _nameForNew;
-        private string _path;
         
-        
-        public DrawScriptableObjectTree(string path) {
-            _path = path;
+        public DrawScriptableObjectTree(string tabName) {
+            TabName = tabName;
         }
         
         public void SetSelected(object item) {
@@ -23,17 +25,22 @@ namespace DieOut.Editor.GameManager {
             }
         }
         
+        public void OnInitialize() { }
+        
+        public OdinMenuTree BuildMenuTree() {
+            OdinMenuTree tree = new OdinMenuTree();
+            tree.AddRange(EditorSerialization.LoadScriptableObjects<T>(), effect => $"{TabName}/{effect.name} : {effect.GetHashCode()}");
+            return tree;
+        }
+
         [HorizontalGroup("CreateNew")] [GUIColor(0.7f, 0.7f, 1.0f)]
         [Button] public void CreateNew() {
             if(string.IsNullOrEmpty(_nameForNew) || string.IsNullOrWhiteSpace(_nameForNew))
                 return;
 
             T newItem = ScriptableObject.CreateInstance<T>();
-
-            if(string.IsNullOrEmpty(_nameForNew) || string.IsNullOrWhiteSpace(_nameForNew))
-                _path = "Assets/ScriptableObjects/";
             
-            AssetDatabase.CreateAsset(newItem, _path + "\\" + _nameForNew + ".asset");
+            AssetDatabase.CreateAsset(newItem, "Assets/ScriptableObjects/" + "\\" + _nameForNew + ".asset");
             AssetDatabase.SaveAssets();
 
             _nameForNew = "";

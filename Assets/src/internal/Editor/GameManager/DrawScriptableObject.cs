@@ -1,24 +1,31 @@
 ﻿using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 
 namespace DieOut.Editor.GameManager {
     
-    public class DrawScriptableObject<T> where T : ScriptableObject {
+    public class DrawScriptableObject<T> : IGameManagerTab where T : ScriptableObject {
         
+        public string TabName { get; }
+        public bool ShouldDrawEditor => false;
+        public bool ShouldDrawBaseMenu => false;
         [ShowIf("@_scriptableObject != null")] [InlineEditor(InlineEditorObjectFieldModes.CompletelyHidden)]
         [SerializeField] private T _scriptableObject;
-        private string _path;
         
-        [ShowIf("@_scriptableObject == null")] [ReadOnly] [HideLabel] [ShowInInspector] [PropertyOrder(-1)] [InfoBox("Notify Conor plss")]
-        private string _ = string.Empty;
-        
-        
-        public DrawScriptableObject(string path) {
-            _path = path;
+        public DrawScriptableObject(string tabName) {
+            TabName = tabName;
         }
-
-        public void FindTarget() {
-            _scriptableObject = EditorSerialization.LoadAssetFromAssetBrowser<T>();
+        
+        public void OnInitialize() {
+            _scriptableObject = EditorSerialization.LoadScriptableObject<T>();
+        }
+        
+        public void SetSelected(object item) {
+            
+        }
+        
+        public OdinMenuTree BuildMenuTree() {
+            return new OdinMenuTree();
         }
         
     }

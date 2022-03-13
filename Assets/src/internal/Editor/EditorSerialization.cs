@@ -5,11 +5,7 @@ namespace DieOut.Editor {
     
     public static class EditorSerialization {
         
-        /// <summary>
-        /// Returns one asset of type T from asset browser.
-        /// Expects to find exactly one asset!
-        /// </summary>
-        public static T LoadAssetFromAssetBrowser<T>() where T : ScriptableObject {
+        public static T LoadScriptableObject<T>() where T : ScriptableObject {
             // get all GUIDs of type T
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T)); // use typeof(T) instead of nameof(T) to prevent duplicate naming
 
@@ -26,6 +22,25 @@ namespace DieOut.Editor {
             // load asset at path
             T asset = AssetDatabase.LoadAssetAtPath<T>(path);
             return asset;
+        }
+        
+        public static T[] LoadScriptableObjects<T>() where T : ScriptableObject {
+            // get all GUIDs of type T
+            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T)); // use typeof(T) instead of nameof(T) to prevent duplicate naming
+            
+            // get paths from GUIDs
+            string[] paths = new string[guids.Length];
+            for(int i = 0; i < guids.Length; i++) {
+                paths[i] = AssetDatabase.GUIDToAssetPath(guids[i]);
+            }
+            
+            // load assets at paths
+            T[] assets = new T[paths.Length];
+            for(int i = 0; i < paths.Length; i++) {
+                assets[i] = AssetDatabase.LoadAssetAtPath<T>(paths[i]);
+            }
+            
+            return assets;
         }
         
     }
