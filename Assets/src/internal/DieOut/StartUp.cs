@@ -5,7 +5,7 @@ using SceneManager = UnityEngine.SceneManagement.SceneManager;
 namespace DieOut {
     
     public class StartUp : MonoBehaviour {
-
+        
         [SerializeField] private bool _skipControllerRecommendationsInEditor = true;
         [SerializeField] private SceneRef _mainMenuScene;
         [SerializeField] private SceneRef _controllerRecommendationScene;
