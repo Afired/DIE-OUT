@@ -3,7 +3,7 @@
     "rootNamespace": "Afired.UI",
     "references": [
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:f99e17d42649aaf46b3a99f53752fdf8"
+        "GUID:09747618e5db7124f8a424a7213ce9b0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
