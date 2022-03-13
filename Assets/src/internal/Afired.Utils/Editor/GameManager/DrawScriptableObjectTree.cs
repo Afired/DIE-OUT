@@ -4,7 +4,7 @@ using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace DieOut.Editor.GameManager {
+namespace Afired.Utils.Editor.GameManager {
     
     public class DrawScriptableObjectTree<T> : IGameManagerTab where T : ScriptableObject {
         

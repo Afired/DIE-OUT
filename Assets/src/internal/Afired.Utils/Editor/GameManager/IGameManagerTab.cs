@@ -1,6 +1,6 @@
 ﻿using Sirenix.OdinInspector.Editor;
 
-namespace DieOut.Editor.GameManager {
+namespace Afired.Utils.Editor.GameManager {
     
     public interface IGameManagerTab {
         

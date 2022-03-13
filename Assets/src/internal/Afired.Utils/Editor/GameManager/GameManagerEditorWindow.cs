@@ -1,33 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Afired.GameManagement.Characters;
-using Afired.GameManagement.GameModes;
-using Afired.GameManagement.Sessions;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace DieOut.Editor.GameManager {
+namespace Afired.Utils.Editor.GameManager {
     
-    internal class GameManagerEditorWindow : OdinMenuEditorWindow {
+    public abstract class GameManagerEditorWindow : OdinMenuEditorWindow {
         
         private int _currentTabIndex = 0;
         private IGameManagerTab CurrentTab => _tabs.ElementAtOrDefault(_currentTabIndex);
-        
-        private readonly List<IGameManagerTab> _tabs = new List<IGameManagerTab>() {
-            new DrawScriptableObjectTree<GameMode>("Game Modes"),
-            new DrawScriptableObjectTree<Character>("Characters"),
-            new DrawScriptableObject<SessionSettings>("Session Settings"),
-        };
+
+        private IGameManagerTab[] _tabs;
         
         private bool _menuTreeIsDirty = false;
         private int _headerIndex;
         
-        [MenuItem("Afired/Game Manager")]
-        public static void OpenWindow() {
-            GetWindow<GameManagerEditorWindow>("Game Manager").Show();
+        protected void Awake() {
+            Init(out IEnumerable<IGameManagerTab> gameManagerTabs);
+            _tabs = gameManagerTabs.ToArray();
         }
+        
+        protected abstract void Init(out IEnumerable<IGameManagerTab> gameManagerTabs);
         
         protected override void Initialize() {
             CurrentTab.OnInitialize();

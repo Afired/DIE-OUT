@@ -3,7 +3,7 @@ using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 
-namespace DieOut.Editor.GameManager {
+namespace Afired.Utils.Editor.GameManager {
     
     public class DrawScriptableObject<T> : IGameManagerTab where T : ScriptableObject {
         
