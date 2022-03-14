@@ -7,26 +7,15 @@ namespace Afired.Utils.Triggers {
     
     public abstract class Trigger : MonoBehaviour {
         
-        [Header("Collider")]
-        [SerializeField] private ColliderType _colliderType;
-        [SerializeField] private Vector3 _center = Vector3.zero;
-        [SerializeField] private Vector3 _size = Vector3.one;
-        [SerializeField] private float _radius = 0.5f;
-        [SerializeField] private float _height = 1f;
-        [SerializeField] private Axis _direction = Axis.Y;
-        
+        [SerializeField] private TriggerData _triggerData;
         private GameObject _linkedGameObject;
         private PositionConstraint _linkedPositionConstraint;
         private Rigidbody _linkedRigidbody;
         private TriggerHook _linkedTriggerHook;
         private Collider _linkedCollider;
-        #if UNITY_EDITOR
-        [SerializeField] private bool _colliderTypeIsDirty;
-        [SerializeField] private bool _colliderValuesAreDirty;
-        #endif
         
         public void SetColliderType(ColliderType colliderType) {
-            _colliderType = colliderType;
+            _triggerData.ColliderType = colliderType;
             UpdateColliderType();
         }
 
@@ -55,9 +44,9 @@ namespace Afired.Utils.Triggers {
         
         private void Update() {
             #if UNITY_EDITOR
-            if(_colliderTypeIsDirty)
+            if(_triggerData.ColliderTypeIsDirty)
                 UpdateColliderType();
-            else if(_colliderValuesAreDirty)
+            else if(_triggerData.ColliderValuesAreDirty)
                 UpdateColliderValues();
             #endif
         }
@@ -66,7 +55,7 @@ namespace Afired.Utils.Triggers {
             if(_linkedCollider != null)
                 Destroy(_linkedCollider);
             
-            switch(_colliderType) {
+            switch(_triggerData.ColliderType) {
                 case ColliderType.Box:
                     _linkedCollider = _linkedGameObject.AddComponent<BoxCollider>();
                     break;
@@ -82,35 +71,35 @@ namespace Afired.Utils.Triggers {
             
             _linkedCollider.isTrigger = true;
             #if UNITY_EDITOR
-            _colliderTypeIsDirty = false;
+            _triggerData.ColliderTypeIsDirty = false;
             #endif
             UpdateColliderValues();
         }
 
         private void UpdateColliderValues() {
-            switch(_colliderType) {
+            switch(_triggerData.ColliderType) {
                 case ColliderType.Box:
                     BoxCollider boxCollider = _linkedCollider as BoxCollider;
-                    boxCollider!.center = _center;
-                    boxCollider!.size = _size;
+                    boxCollider!.center = _triggerData.Center;
+                    boxCollider!.size = _triggerData.Size;
                     break;
                 case ColliderType.Capsule:
                     CapsuleCollider capsuleCollider = _linkedCollider as CapsuleCollider;
-                    capsuleCollider!.center = _center;
-                    capsuleCollider!.height = _height;
-                    capsuleCollider!.direction = (int) _direction;
-                    capsuleCollider!.radius = _radius;
+                    capsuleCollider!.center = _triggerData.Center;
+                    capsuleCollider!.height = _triggerData.Height;
+                    capsuleCollider!.direction = (int) _triggerData.Direction;
+                    capsuleCollider!.radius = _triggerData.Radius;
                     break;
                 case ColliderType.Sphere:
                     SphereCollider sphereCollider = _linkedCollider as SphereCollider;
-                    sphereCollider!.center = _center;
-                    sphereCollider!.radius = _radius;
+                    sphereCollider!.center = _triggerData.Center;
+                    sphereCollider!.radius = _triggerData.Radius;
                     break;
                 default:
                     throw new InvalidEnumArgumentException();
             }
             #if UNITY_EDITOR
-            _colliderValuesAreDirty = false;
+            _triggerData.ColliderValuesAreDirty = false;
             #endif
         }
         
@@ -130,14 +119,14 @@ namespace Afired.Utils.Triggers {
         
         private void OnDrawGizmosSelected() {
             Gizmos.color = Color.green;
-            switch(_colliderType) {
+            switch(_triggerData.ColliderType) {
                 case ColliderType.Box:
-                    Gizmos.DrawWireCube(transform.position + _center, _size);
+                    Gizmos.DrawWireCube(transform.position + _triggerData.Center, _triggerData.Size);
                     break;
                 case ColliderType.Capsule:
                     break;
                 case ColliderType.Sphere:
-                    Gizmos.DrawWireSphere(transform.position + _center, _radius);
+                    Gizmos.DrawWireSphere(transform.position + _triggerData.Center, _triggerData.Radius);
                     break;
             }
         }

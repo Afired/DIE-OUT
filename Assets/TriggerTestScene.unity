@@ -248,14 +248,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b078c7f3b2147cb8a351089397af9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colliderType: 0
-  _center: {x: 0, y: 0, z: 0}
-  _size: {x: 1, y: 1, z: 1}
-  _radius: 0.5
-  _height: 1
-  _direction: 1
-  _colliderTypeIsDirty: 0
-  _colliderValuesAreDirty: 0
+  _triggerData:
+    ColliderType: 0
+    Center: {x: -3.4, y: -0.05, z: 0.72}
+    Size: {x: 1, y: 1, z: 1}
+    Radius: 0.5
+    Height: 1
+    Direction: 1
+    ColliderTypeIsDirty: 0
+    ColliderValuesAreDirty: 0
+  _test: 
 --- !u!4 &1172397266
 Transform:
   m_ObjectHideFlags: 0
@@ -475,14 +477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b078c7f3b2147cb8a351089397af9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colliderType: 0
-  _center: {x: 0, y: 0, z: 0}
-  _size: {x: 1, y: 1, z: 1}
-  _radius: 0.5
-  _height: 1
-  _direction: 1
-  _colliderTypeIsDirty: 0
-  _colliderValuesAreDirty: 0
+  _triggerData:
+    ColliderType: 2
+    Center: {x: 0, y: 0, z: 0}
+    Size: {x: 1, y: 1, z: 1}
+    Radius: 0.5
+    Height: 1
+    Direction: 1
+    ColliderTypeIsDirty: 0
+    ColliderValuesAreDirty: 0
+  _test: 
 --- !u!4 &1684681910
 Transform:
   m_ObjectHideFlags: 0
