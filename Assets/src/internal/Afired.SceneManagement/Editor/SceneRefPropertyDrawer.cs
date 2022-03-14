@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Afired.SceneManagement.Editor {
     
-    #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(SceneRef))]
     public class SceneRefPropertyDrawer : PropertyDrawer {
     
@@ -24,6 +23,5 @@ namespace Afired.SceneManagement.Editor {
         }
     
     }
-    #endif
     
 }

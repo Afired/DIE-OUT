@@ -36,17 +36,21 @@ namespace Afired.PartyGame.GameModes {
             await SceneManager.LoadScenesAsync(scenesToLoad.Select(scene => scene.SceneName).ToArray());
         }
         
-        public async void EndGameMode() {
+        public void EndGameMode() {
             if(_hasEnded) {
                 Debug.Log($"{GameMode.DisplayName} has already been ended but it has been tried to end it a second time");
                 return;
             }
             _hasEnded = true;
-            await OnGameModeEnd.InvokeParallel();
             
             #pragma warning disable CS4014
-            Session.Current.Next();
+            EndGameModeTask();
             #pragma warning restore CS4014
+        }
+        
+        private async Task EndGameModeTask() {
+            await OnGameModeEnd.InvokeParallel();
+            await Session.Current.Next();
         }
         
     }

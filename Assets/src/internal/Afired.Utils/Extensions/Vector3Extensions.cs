@@ -2,7 +2,7 @@
 
 namespace Afired.Utils.Extensions {
     
-    public static class Vector3Extension {
+    public static class Vector3Extensions {
         
         /// <summary>
         /// Returns a Vector2 which consist of the x and y values of the given Vector3.
