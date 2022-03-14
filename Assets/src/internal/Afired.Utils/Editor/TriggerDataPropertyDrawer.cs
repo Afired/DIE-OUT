@@ -8,23 +8,36 @@ namespace Afired.Utils.Editor {
     public class TriggerPropertyDrawer : PropertyDrawer {
         
         private int _lineCount;
+        private int _additionalVerticalSpacing = 5;
+        private bool _show;
         
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
             
             _lineCount = 0;
-            EditorGUI.BeginProperty(position, label, property);
             
+            Rect rect0 = new Rect(0, position.min.y, position.size.x + position.min.x, position.size.y);
+            EditorGUI.DrawRect(rect0, new Color(0.19f, 0.19f, 0.19f));
+            
+            Rect foldoutRect = new Rect(position.min.x, position.min.y, position.size.x, EditorGUIUtility.singleLineHeight);
+            _show = EditorGUI.Foldout(foldoutRect, _show, new GUIContent("Trigger"));
+            
+            _lineCount++;
+            
+            if(!_show)
+                return;
+            
+            EditorGUI.BeginProperty(position, label, property);
             EditorGUI.BeginChangeCheck();
             
             _lineCount++;
             Rect rect1 = new Rect(position.min.x, position.min.y + (EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing) * (_lineCount - 1), position.size.x, EditorGUIUtility.singleLineHeight);
             SerializedProperty colliderTypeProperty = property.FindPropertyRelative("ColliderType");
-            ColliderType colliderType = (ColliderType) EditorGUI.EnumPopup(rect1, "Collider Type", (ColliderType) colliderTypeProperty.enumValueIndex);
+            ColliderType colliderType = (ColliderType) EditorGUI.EnumPopup(rect1, (ColliderType) colliderTypeProperty.enumValueIndex);
             colliderTypeProperty.enumValueIndex = (int) colliderType;
             
-            if(EditorGUI.EndChangeCheck() && EditorApplication.isPlaying)
-                property.FindPropertyRelative("ColliderTypeIsDirty").boolValue = true;
-            
+            if(EditorGUI.EndChangeCheck() && EditorApplication.isPlaying) {
+//                property.FindPropertyRelative("ColliderTypeIsDirty").boolValue = true;
+            }
             
             EditorGUI.BeginChangeCheck();
             
@@ -62,8 +75,9 @@ namespace Afired.Utils.Editor {
                 EditorGUI.EndProperty();
             }
             
-            if(EditorGUI.EndChangeCheck() && EditorApplication.isPlaying)
-                property.FindPropertyRelative("ColliderValuesAreDirty").boolValue = true;
+            if(EditorGUI.EndChangeCheck() && EditorApplication.isPlaying) {
+//                property.FindPropertyRelative("ColliderValuesAreDirty").boolValue = true;
+            }
             
         }
         
@@ -78,7 +92,7 @@ namespace Afired.Utils.Editor {
 //        }
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
-            return EditorGUIUtility.singleLineHeight * _lineCount + EditorGUIUtility.standardVerticalSpacing * (_lineCount - 1);
+            return EditorGUIUtility.singleLineHeight * _lineCount + EditorGUIUtility.standardVerticalSpacing * (_lineCount - 1) + _additionalVerticalSpacing;
         }
         
     }

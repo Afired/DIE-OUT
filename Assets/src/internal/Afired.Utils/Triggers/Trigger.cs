@@ -26,6 +26,7 @@ namespace Afired.Utils.Triggers {
         private void Awake() {
             _linkedGameObject = new GameObject(gameObject.name + " (Trigger Object)");
             _linkedGameObject.transform.position = transform.position;
+            _linkedGameObject.hideFlags = HideFlags.NotEditable | HideFlags.DontSave | HideFlags.HideInHierarchy | HideFlags.HideInInspector;
             
             _linkedPositionConstraint = _linkedGameObject.AddComponent<PositionConstraint>();
             _linkedPositionConstraint.SetSources(new List<ConstraintSource>() { new ConstraintSource() { sourceTransform = gameObject.transform, weight = 1 } });
