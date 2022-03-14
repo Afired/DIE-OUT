@@ -17,7 +17,7 @@ namespace Afired.PartyGame.Sessions {
         
         
         private void Awake() {
-            _instance.Init(this);
+            _instance.Register(this);
         }
         
     }

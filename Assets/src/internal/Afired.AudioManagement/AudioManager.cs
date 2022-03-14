@@ -15,7 +15,7 @@ namespace Afired.AudioManagement {
         private const string AMBIENT_VOLUME = "AmbientVolume";
         
         private void Awake() {
-            _instance.Init(this);
+            _instance.Register(this);
         }
         
         public static void SetVolume(AudioChannel audioChannel, float percentile) {

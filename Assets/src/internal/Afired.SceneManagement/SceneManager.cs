@@ -22,7 +22,7 @@ namespace Afired.SceneManagement {
         private static SingletonInstance<SceneManager> _instance;
         
         private void Awake() {
-            _instance.Init(this);
+            _instance.Register(this);
         }
         
         /// <summary>
@@ -45,7 +45,7 @@ namespace Afired.SceneManagement {
                 await Await.NextUpdate();
             }
             
-            await OnEndAsyncLevelLoading.InvokeAsynchronously();
+            await OnEndAsyncLevelLoading.InvokeParallel();
             
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(_instance.Get()._loadingScreenScene.SceneName, UnloadSceneOptions.None);
         }

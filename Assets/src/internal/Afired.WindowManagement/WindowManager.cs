@@ -12,7 +12,7 @@ namespace Afired.WindowManagement {
         
         
         private void Awake() {
-            _instance.Init(this);
+            _instance.Register(this);
             SetWindowMode(_startingWindowMode);
         }
         

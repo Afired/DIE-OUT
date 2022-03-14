@@ -13,7 +13,7 @@ namespace Afired.QualityManagement {
         
         
         private void Awake() {
-            _instance.Init(this);
+            _instance.Register(this);
         }
         
         public static void SetGraphicsQualityLevel(int index) {

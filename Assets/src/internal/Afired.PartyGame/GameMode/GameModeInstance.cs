@@ -25,8 +25,8 @@ namespace Afired.PartyGame.GameModes {
 
         public async Task Load() {
             await LoadGameModeMap(GameMode, Map);
-            await OnGameModePrepare.InvokeAsynchronously();
-            await OnGameModeStart.InvokeAsynchronously();
+            await OnGameModePrepare.InvokeParallel();
+            await OnGameModeStart.InvokeParallel();
         }
         
         private static async Task LoadGameModeMap(GameMode gameMode, Map map) {
@@ -42,7 +42,7 @@ namespace Afired.PartyGame.GameModes {
                 return;
             }
             _hasEnded = true;
-            await OnGameModeEnd.InvokeAsynchronously();
+            await OnGameModeEnd.InvokeParallel();
             
             #pragma warning disable CS4014
             Session.Current.Next();

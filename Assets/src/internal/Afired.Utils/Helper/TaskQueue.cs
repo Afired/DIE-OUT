@@ -17,18 +17,18 @@ namespace Afired.Utils.Helper {
         }
         
         /// <summary>
-        /// invokes all tasks queued synchronously
+        /// invokes all queued tasks sequential
         /// </summary>
-        public async Task InvokeSynchronously() {
+        public async Task InvokeSequential() {
             while(_queuedTaskFunctions.Count > 0) {
                 await _queuedTaskFunctions.Dequeue().Invoke();
             }
         }
         
         /// <summary>
-        /// invokes all tasks queued asynchronously
+        /// invokes all queued tasks parallel
         /// </summary>
-        public async Task InvokeAsynchronously() {
+        public async Task InvokeParallel() {
             List<Task> tasks = new List<Task>();
             while(_queuedTaskFunctions.Count > 0) {
                 tasks.Add(_queuedTaskFunctions.Dequeue().Invoke());
