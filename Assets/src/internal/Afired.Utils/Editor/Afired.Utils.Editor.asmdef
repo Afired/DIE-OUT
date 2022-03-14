@@ -1,7 +1,9 @@
 {
     "name": "Afired.Utils.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:09747618e5db7124f8a424a7213ce9b0"
+    ],
     "includePlatforms": [
         "Editor"
     ],
