@@ -215,6 +215,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397129792}
+  - component: {fileID: 397129793}
+  - component: {fileID: 397129795}
+  - component: {fileID: 397129796}
+  - component: {fileID: 397129794}
   m_Layer: 0
   m_Name: SomeCharacter
   m_TagString: Untagged
@@ -236,6 +240,115 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &397129793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283fd6b1c382470e9a4ae1589f712716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _floatParameters
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Single,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: WalkingSpeed
+    - Name: $v
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _currentState: {fileID: 397129795}
+  _transitions:
+  - _characterStateIn: {fileID: 397129795}
+    _characterStateOut: {fileID: 397129796}
+    _transitionConditions:
+    - _parameterName: WalkingSpeed
+      _comparisonType: 1
+      _value: 0.1
+  - _characterStateIn: {fileID: 397129796}
+    _characterStateOut: {fileID: 397129795}
+    _transitionConditions:
+    - _parameterName: WalkingSpeed
+      _comparisonType: 0
+      _value: 0.1
+--- !u!114 &397129794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c989bcfed34c26b34d282f27a33a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &397129795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64af0d580eb4b96a5c59f73924dd5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Idle
+  _characterBehaviours:
+  - {fileID: 397129794}
+--- !u!114 &397129796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64af0d580eb4b96a5c59f73924dd5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateName: Walk
+  _characterBehaviours:
+  - {fileID: 397129794}
 --- !u!1 &1331584563
 GameObject:
   m_ObjectHideFlags: 0
