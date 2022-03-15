@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -7,15 +8,20 @@ namespace DieOut.CharacterSystem {
     
     public class CharacterStatemachine : SerializedMonoBehaviour {
         
-        [OdinSerialize] private Dictionary<string, float> _floatParameters = new Dictionary<string, float>();
+        [LabelText("@\"Current State: \" + _currentState?.StateName ?? \"null\"")]
         [SerializeField] private CharacterState _currentState;
+        [OdinSerialize] private Dictionary<string, float> _floatParameters = new Dictionary<string, float>();
         [SerializeField] private Transition[] _transitions;
 
         public float GetParameterByName(string parameterName) {
-            return _floatParameters[parameterName];
+            if(!_floatParameters.TryGetValue(parameterName, out float value))
+                throw new Exception($"couldn't find parameter '{parameterName}'");
+            return value;
         }
         
         public void SetParameter(string parameterName, float value) {
+            if(!_floatParameters.ContainsKey(parameterName))
+                throw new Exception($"couldn't find parameter '{parameterName}'");
             _floatParameters[parameterName] = value;
         }
         

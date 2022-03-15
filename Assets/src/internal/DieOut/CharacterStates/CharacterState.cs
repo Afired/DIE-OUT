@@ -16,7 +16,6 @@ namespace DieOut.CharacterSystem {
             foreach(CharacterBehaviour characterBehaviour in _characterBehaviours) {
                 characterBehaviour.OnEnterState(characterStatemachine);
             }
-            Debug.Log("entered state " + _stateName);
         }
         
         public void OnStateUpdate(CharacterStatemachine characterStatemachine) {
@@ -29,7 +28,6 @@ namespace DieOut.CharacterSystem {
             foreach(CharacterBehaviour characterBehaviour in _characterBehaviours) {
                 characterBehaviour.OnExitState(characterStatemachine);
             }
-            Debug.Log("exited state " + _stateName);
         }
         
     }

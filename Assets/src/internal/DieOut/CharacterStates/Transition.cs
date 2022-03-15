@@ -15,6 +15,7 @@ namespace DieOut.CharacterSystem {
         [SerializeField] private CharacterState _characterStateIn;
         [HorizontalGroup("Horizontal")] [LabelText("@\"=> \" + (_characterStateOut?.StateName ?? \"...\")")] [LabelWidth(100)]
         [SerializeField] private CharacterState _characterStateOut;
+        [LabelText("Conditions")]
         [SerializeField] private TransitionCondition[] _transitionConditions;
 
         public bool IsTrue(CharacterStatemachine characterStatemachine) {
