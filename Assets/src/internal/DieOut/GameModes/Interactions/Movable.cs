@@ -6,6 +6,7 @@ namespace DieOut.GameModes.Interactions {
     [RequireComponent(typeof(CharacterController))]
     public class Movable : MonoBehaviour {
         
+        public bool IsGrounded => _currentTime <= _groundedBufferTime;
         [SerializeField] private float _inAirGravityForceUp = 50f;
         [SerializeField] private float _inAirGravityForceDown = 50f;
         [SerializeField] private float _groundGravityForce = 1f;
@@ -14,27 +15,30 @@ namespace DieOut.GameModes.Interactions {
         private float _currentTime = 0;
         private bool _hasGravity = true;
         private CharacterController _characterController;
+        private Animator _animator;
         private Vector3 _currentVelocity;
         private Vector3 _move;
         
         private void Awake() {
             _characterController = GetComponent<CharacterController>();
+            _animator = GetComponent<Animator>();
         }
-
+        
         private void Update() {
+            _animator.SetBool("isGrounded", _characterController.isGrounded);
             _currentTime += Time.deltaTime;
 
             if (_characterController.isGrounded) {
                 _currentTime = 0;
             }
         }
-
+        
         private void LateUpdate() {
             Vector3 direction = CalcNextFrame();
             _characterController.Move(direction);
             PostMove();
         }
-
+        
         private Vector3 CalcNextFrame() {
             Vector3 direction = Vector3.zero;
             if(_hasGravity)
@@ -50,7 +54,7 @@ namespace DieOut.GameModes.Interactions {
             if(_characterController.isGrounded)
                 _currentVelocity = new Vector3(_currentVelocity.x, -_groundGravityForce, _currentVelocity.z);
         }
-
+        
         private void ApplyGravity() {
             if(_currentVelocity.y >= 0)
                 _currentVelocity += new Vector3(0, -_inAirGravityForceUp * Time.deltaTime, 0);
@@ -75,7 +79,6 @@ namespace DieOut.GameModes.Interactions {
             _currentVelocity = velocity;
         }
         
-        public bool IsGrounded => _currentTime <= _groundedBufferTime;
     }
     
 }

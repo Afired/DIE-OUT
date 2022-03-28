@@ -1,19 +1,26 @@
-﻿using Afired.Utils.StateMachine;
+﻿using System;
+using Afired.Utils.StateMachine;
+using DieOut.GameModes.Interactions;
 using UnityEngine;
 
 namespace StateMachineTest {
     
+    [RequireComponent(typeof(Movable))]
     public class WalkState : State {
+
+        [SerializeField] private float _speed = 10f;
+        private Movable _movable;
         
-        protected override void OnStateEnter() {
-            Debug.Log("Entered Move State");
+        private void Awake() {
+            _movable = GetComponent<Movable>();
         }
         
-        protected override void OnStateUpdate() {
-        }
+        protected override void OnStateEnterTransitionUpdate() => Move();
+        protected override void OnStateUpdate() => Move();
         
-        protected override void OnStateExit() {
-            Debug.Log("Exit Move State");
+        private void Move() {
+            Vector2 horizontal = Animator.GetVector2("input.horizontal");
+            _movable.Move(horizontal * Time.deltaTime * _speed);
         }
         
     }
