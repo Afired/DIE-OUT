@@ -1,5 +1,4 @@
-﻿using System;
-using Afired.Utils.StateMachine;
+﻿using Afired.Utils.StateMachine;
 using DieOut.GameModes.Interactions;
 using UnityEngine;
 
@@ -15,12 +14,9 @@ namespace StateMachineTest {
             _movable = GetComponent<Movable>();
         }
         
-        protected override void OnStateEnterTransitionUpdate() => Move();
-        protected override void OnStateUpdate() => Move();
-        
-        private void Move() {
+        protected override void OnStateUpdate() {
             Vector2 horizontal = Animator.GetVector2("input.horizontal");
-            _movable.Move(horizontal * Time.deltaTime * _speed);
+            _movable.Move(new Vector3(horizontal.x, 0, horizontal.y) * Time.deltaTime * _speed);
         }
         
     }

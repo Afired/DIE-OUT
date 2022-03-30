@@ -13,7 +13,7 @@ namespace StateMachineTest {
             _movable = GetComponent<Movable>();
         }
         
-        protected override void OnStateEnterTransition() {
+        protected override void OnStateEnter() {
             _movable.AddVelocity(new Vector3(0, 10, 0));
         }
         
