@@ -5,15 +5,6 @@ namespace Afired.StateMachineSystem.Example {
     
     public class CharacterStateMachine : StateMachine {
         
-        protected override void Init(out ICollection<IState> states, out ICollection<ITransition<IState>> transitions, out IState startingState) {
-            states = GetComponents<IState>();
-            transitions = null;
-//                new ITransition<IState, IState>[] {
-//                new WalkingJumpingTransition(),
-//            };
-            startingState = states.FirstOrDefault();
-        }
-        
     }
     
 }

@@ -1,12 +1,10 @@
 ﻿using System;
-using DieOut.GameModes.Interactions;
 using UnityEngine;
 
 namespace Afired.StateMachineSystem.Example {
     
-    public class WalkingState : State {
-
-        [SerializeField] private Movable _movable;
+    public class WalkingToJumpingTransition : Transition<WalkingState, JumpingState> {
+        
         private InputTable _inputTable;
         
         private void Awake() {
@@ -21,9 +19,8 @@ namespace Afired.StateMachineSystem.Example {
             _inputTable.Disable();
         }
         
-        public override void OnStateUpdate() {
-            Vector2 _horizontalMovement = _inputTable.CharacterControls.Move.ReadValue<Vector2>() * Time.deltaTime * 10f;
-            _movable.Move(new Vector3(_horizontalMovement.x, 0, _horizontalMovement.y));
+        public override bool TestCondition() {
+            return _inputTable.CharacterControls.Jump.ReadValue<float>() != 0;
         }
         
     }

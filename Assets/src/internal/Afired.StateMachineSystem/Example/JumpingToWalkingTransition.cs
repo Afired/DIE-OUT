@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Afired.StateMachineSystem.Example {
     
-    public class JumpingState : State {
-
+    public class JumpingToWalkingTransition : Transition<JumpingState, WalkingState> {
+        
         [SerializeField] private Movable _movable;
         
-        public override void OnStateEnter() {
-            _movable.SetVelocity(new Vector3(0, 10, 0));
+        public override bool TestCondition() {
+            return _movable.IsGrounded;
         }
         
     }

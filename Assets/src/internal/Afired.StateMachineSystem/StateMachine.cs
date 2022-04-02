@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Afired.StateMachineSystem {
     
+    [InfoBox("@InfoMessage")]
     public abstract class StateMachine : MonoBehaviour {
         
-        private ICollection<IState> _states;
-        private IState _currentState;
-        
-        protected abstract void Init(out ICollection<IState> states, out ICollection<ITransition<IState>> transitions, out IState startingState);
+        [SerializeField] private State _startingState;
+        private ICollection<State> _states;
+        private ICollection<TransitionBase> _transitions;
+        private State _currentState;
         
         private void Awake() {
-            Init(out _states, out ICollection<ITransition<IState>> transitions, out IState startingState);
-            _currentState = startingState ?? throw new ArgumentNullException();
+            _states = GetComponents<State>();
+            _transitions = GetComponents<TransitionBase>();
+            _currentState = _startingState;
+            _startingState.OnStateEnter();
         }
+
+        private string InfoMessage => $"{gameObject.GetComponents<State>().Length} States | {gameObject.GetComponents<TransitionBase>().Length} Transitions";
         
         private void Update() {
-            if(TryToTransition(out IState nextState)) {
+            if(TryToTransition(out State nextState)) {
                 _currentState.OnStateExit();
                 _currentState = nextState;
                 _currentState.OnStateEnter();
@@ -25,19 +32,21 @@ namespace Afired.StateMachineSystem {
             _currentState.OnStateUpdate();
         }
         
-        private bool TryToTransition(out IState nextState) {
-            if(_currentState.TryToTransition(out Type nextStateType)) {
-                if(TryToGetStateOfType(nextStateType, out IState state)) {
-                    nextState = state;
-                    return true;
-                }
+        private bool TryToTransition(out State nextState) {
+            
+            foreach(TransitionBase transition in _transitions.Where(x => x.GetInState() == _currentState.GetType() && x.TestCondition())) {
+                if(!TryToGetStateOfType(transition.GetOutState(), out nextState))
+                    throw new Exception();
+                
+                return true;
             }
+            
             nextState = null;
             return false;
         }
         
-        private bool TryToGetStateOfType(Type type, out IState result) {
-            foreach(IState state in _states) {
+        private bool TryToGetStateOfType(Type type, out State result) {
+            foreach(State state in _states) {
                 if(state.GetType() == type) {
                     result = state;
                     return true;
