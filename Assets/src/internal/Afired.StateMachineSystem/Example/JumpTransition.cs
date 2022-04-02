@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Afired.StateMachineSystem.Example {
     
-    public class WalkingJumpingTransition : MonoBehaviour, ITransition<WalkingState, JumpingState> {
+    [Serializable]
+    public class JumpTransition : ITransition<JumpingState> {
         
         public bool TestCondition() {
             Debug.Log("Testing");

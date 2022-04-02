@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 397129795}
   - component: {fileID: 397129794}
   - component: {fileID: 397129793}
+  - component: {fileID: 397129797}
   m_Layer: 0
   m_Name: SomeCharacter
   m_TagString: Untagged
@@ -249,9 +250,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 397129791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf873d034b724af9a4280f13360f0fc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a45d8cb790e47078c6fc447d23d531d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _test: 53
+  _genericContainer:
+    _generic: 0
 --- !u!114 &397129794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +268,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cb859d96ec415fadb59da4e3800315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _transitions
+      Entry: 6
+      Data: 
+    - Name: _someTransition
+      Entry: 6
+      Data: 
 --- !u!114 &397129795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +295,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc52c64b6d2d4ebdb2b15b8ded86ad8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _transitions
+      Entry: 7
+      Data: 0|Afired.StateMachineSystem.Transition`1[[Afired.StateMachineSystem.IState,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]][],
+        Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _someTransition
+      Entry: 6
+      Data: 
 --- !u!114 &397129796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +333,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3843b0e89726456c8252182f5724384e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &397129797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98508612ddff466f8f158e2a9ccb9e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trees:
+  - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: RootNode, ns: Afired.StateMachineSystem.GenericTests, asm: Assembly-CSharp}
+      data:
+        left:
+          id: 1
+        right:
+          id: 1
+    00000001:
+      type: {class: , ns: , asm: }
 --- !u!1 &1331584563
 GameObject:
   m_ObjectHideFlags: 0

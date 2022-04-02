@@ -2,13 +2,13 @@
 
 namespace Afired.StateMachineSystem.Example {
     
-    public class JumpingState : MonoBehaviour, IState {
+    public class JumpingState : State {
         
-        public void OnStateEnter() { Debug.Log("Entered Jumping State"); }
+        public override void OnStateEnter() { Debug.Log("Entered Jumping State"); }
         
-        public void OnStateUpdate() { }
+        public override void OnStateUpdate() { }
         
-        public void OnStateExit() { Debug.Log("Exited Jumping State"); }
+        public override void OnStateExit() { Debug.Log("Exited Jumping State"); }
         
     }
     

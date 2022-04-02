@@ -16,4 +16,9 @@ MonoBehaviour:
   defaultEditorBehaviour: 1
   processMouseMoveInInspector: 1
   drawingConfig:
-    configs: []
+    configs:
+    - DrawnTypeName: Afired.StateMachineSystem.GenericTests.GenericMono, Assembly-CSharp
+      EditorTypeName: Sirenix.OdinInspector.Editor.OdinEditor, Sirenix.OdinInspector.Editor
+    - DrawnTypeName: Afired.StateMachineSystem.GenericTests.SerializeReferenceMono,
+        Assembly-CSharp
+      EditorTypeName: 

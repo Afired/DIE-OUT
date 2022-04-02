@@ -4,7 +4,7 @@ namespace Afired.StateMachineSystem {
     
     public interface IStateMachine {
         
-        IList<ITransition<IState, IState>> _transitions { get; set; }
+        IList<ITransition<IState>> _transitions { get; set; }
         
     }
     
