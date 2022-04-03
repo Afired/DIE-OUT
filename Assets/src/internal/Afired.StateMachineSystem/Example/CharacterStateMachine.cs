@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 
 namespace Afired.StateMachineSystem.Example {
     
-    public class CharacterStateMachine : StateMachine {
+    public class CharacterStateMachine : StateMachine<CharacterParameter> {
         
     }
     

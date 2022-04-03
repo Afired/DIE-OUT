@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Afired.StateMachineSystem {
     
-    [InfoBox("@InfoMessage")]
-    public abstract class StateMachine : MonoBehaviour {
+    [DefaultExecutionOrder(-50)]
+    public abstract class StateMachine<T1> : MonoBehaviour where T1 : IStateMachineParameter, new() {
         
-        [SerializeField] private State _startingState;
+        [field: SerializeField] public State StartingState { get; private set; }
+        [field: Space]
+        [field: SerializeField] public T1 Parameter { get; private set; } = new T1();
         private ICollection<State> _states;
         private ICollection<ITransition> _transitions;
         private State _currentState;
@@ -17,8 +18,8 @@ namespace Afired.StateMachineSystem {
         private void Awake() {
             _states = GetComponents<State>();
             _transitions = GetComponents<ITransition>();
-            _currentState = _startingState;
-            _startingState.OnStateEnter();
+            _currentState = StartingState;
+            StartingState.OnStateEnter();
         }
 
         private string InfoMessage => $"{gameObject.GetComponents<State>().Length} States | {gameObject.GetComponents<ITransition>().Length} Transitions";

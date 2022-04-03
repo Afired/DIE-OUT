@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 397129799}
   - component: {fileID: 397129797}
   - component: {fileID: 397129794}
+  - component: {fileID: 397129800}
   m_Layer: 0
   m_Name: SomeCharacter
   m_TagString: Untagged
@@ -256,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf873d034b724af9a4280f13360f0fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _csm: {fileID: 397129796}
 --- !u!114 &397129794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc52c64b6d2d4ebdb2b15b8ded86ad8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _csm: {fileID: 397129796}
   _movable: {fileID: 397129794}
 --- !u!114 &397129796
 MonoBehaviour:
@@ -298,7 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3843b0e89726456c8252182f5724384e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingState: {fileID: 397129795}
+  <StartingState>k__BackingField: {fileID: 397129795}
+  <Parameter>k__BackingField:
+    HorizontalInput: {x: 0, y: 0}
+    JumpInput: 0
+    IsGrounded: 0
 --- !u!143 &397129797
 CharacterController:
   m_ObjectHideFlags: 0
@@ -329,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cb859d96ec415fadb59da4e3800315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _csm: {fileID: 397129796}
   _movable: {fileID: 397129794}
 --- !u!114 &397129799
 MonoBehaviour:
@@ -343,6 +351,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movable: {fileID: 397129794}
+--- !u!114 &397129800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397129791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f06760491ce40ddae89d940b2a0458f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _csm: {fileID: 397129796}
 --- !u!1 &506451131
 GameObject:
   m_ObjectHideFlags: 0
