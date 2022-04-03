@@ -1,14 +1,17 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Afired.StateMachineSystem {
     
-    public abstract class Transition<InState, OutState> : TransitionBase where InState : State where OutState : State {
+    public abstract class Transition<InState, OutState> : MonoBehaviour, ITransition where InState : State where OutState : State {
         
-        public override Type GetInState() {
+        public abstract bool TestCondition();
+        
+        public Type GetInState() {
             return typeof(InState);
         }
         
-        public override Type GetOutState() {
+        public Type GetOutState() {
             return typeof(OutState);
         }
         

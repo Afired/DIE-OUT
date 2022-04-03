@@ -1,9 +1,8 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Afired.StateMachineSystem {
     
-    public abstract class TransitionBase : MonoBehaviour {
+    public interface ITransition {
         
         public abstract bool TestCondition();
         public abstract Type GetInState();

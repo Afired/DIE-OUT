@@ -11,17 +11,17 @@ namespace Afired.StateMachineSystem {
         
         [SerializeField] private State _startingState;
         private ICollection<State> _states;
-        private ICollection<TransitionBase> _transitions;
+        private ICollection<ITransition> _transitions;
         private State _currentState;
         
         private void Awake() {
             _states = GetComponents<State>();
-            _transitions = GetComponents<TransitionBase>();
+            _transitions = GetComponents<ITransition>();
             _currentState = _startingState;
             _startingState.OnStateEnter();
         }
 
-        private string InfoMessage => $"{gameObject.GetComponents<State>().Length} States | {gameObject.GetComponents<TransitionBase>().Length} Transitions";
+        private string InfoMessage => $"{gameObject.GetComponents<State>().Length} States | {gameObject.GetComponents<ITransition>().Length} Transitions";
         
         private void Update() {
             if(TryToTransition(out State nextState)) {
@@ -34,7 +34,7 @@ namespace Afired.StateMachineSystem {
         
         private bool TryToTransition(out State nextState) {
             
-            foreach(TransitionBase transition in _transitions.Where(x => x.GetInState() == _currentState.GetType() && x.TestCondition())) {
+            foreach(ITransition transition in _transitions.Where(x => x.GetInState() == _currentState.GetType() && x.TestCondition())) {
                 if(!TryToGetStateOfType(transition.GetOutState(), out nextState))
                     throw new Exception();
                 
