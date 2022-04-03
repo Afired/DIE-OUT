@@ -6,7 +6,7 @@ namespace Afired.StateMachineSystem.Example {
 
         [SerializeField] private CharacterStateMachine _csm;
         
-        public override bool TestCondition() {
+        protected override bool ShouldTransition(WalkingState inState, JumpingState outState) {
             return _csm.Parameter.JumpInput;
         }
         

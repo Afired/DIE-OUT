@@ -35,13 +35,12 @@ namespace Afired.StateMachineSystem {
         
         private bool TryToTransition(out State nextState) {
             
-            foreach(ITransition transition in _transitions.Where(x => x.GetInState() == _currentState.GetType() && x.TestCondition())) {
+            foreach(ITransition transition in _transitions.Where(x => x.GetInState() == _currentState.GetType())) {
                 if(!TryToGetStateOfType(transition.GetOutState(), out nextState))
                     throw new Exception();
-                
-                return true;
+                if(transition.ShouldTransition(_currentState, nextState))
+                    return true;
             }
-            
             nextState = null;
             return false;
         }

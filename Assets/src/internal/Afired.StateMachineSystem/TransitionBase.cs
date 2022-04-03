@@ -4,7 +4,7 @@ namespace Afired.StateMachineSystem {
     
     public interface ITransition {
         
-        public abstract bool TestCondition();
+        internal abstract bool ShouldTransition(State inState, State outState);
         public abstract Type GetInState();
         public abstract Type GetOutState();
 
