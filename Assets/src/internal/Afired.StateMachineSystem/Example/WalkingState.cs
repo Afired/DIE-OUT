@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Afired.StateMachineSystem.Example {
     
+    [RequireComponent(typeof(Movable))]
     public class WalkingState : State {
 
         [SerializeField] private CharacterStateMachine _csm;

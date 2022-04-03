@@ -443,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76a71bd7217497aa168a18c5dd26c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minJumpTime: 0.2
 --- !u!114 &397129800
 MonoBehaviour:
   m_ObjectHideFlags: 0
