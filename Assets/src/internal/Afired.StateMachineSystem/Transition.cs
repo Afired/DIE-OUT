@@ -3,20 +3,20 @@ using UnityEngine;
 
 namespace Afired.StateMachineSystem {
     
-    public abstract class Transition<InState, OutState> : MonoBehaviour, ITransition where InState : State where OutState : State {
+    public abstract class Transition<TInState, TOutState, TStateMachine> : MonoBehaviour, ITransition<TStateMachine> where TInState : IState<TStateMachine> where TOutState : IState<TStateMachine> where TStateMachine : IStateMachine {
         
-        protected abstract bool ShouldTransition(InState inState, OutState outState);
-
-        bool ITransition.ShouldTransition(State inState, State outState) {
-            return ShouldTransition(inState as InState, outState as OutState);
+        protected abstract bool ShouldTransition(TInState inState, TOutState outState, TStateMachine stateMachine);
+        
+        bool ITransition<TStateMachine>.ShouldTransition(IState<TStateMachine> inState, IState<TStateMachine> outState, TStateMachine stateMachine) {
+            return ShouldTransition((TInState) inState, (TOutState) outState, stateMachine);
         }
         
         public Type GetInState() {
-            return typeof(InState);
+            return typeof(TInState);
         }
         
         public Type GetOutState() {
-            return typeof(OutState);
+            return typeof(TOutState);
         }
         
     }

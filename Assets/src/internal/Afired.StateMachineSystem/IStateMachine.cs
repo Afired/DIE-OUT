@@ -1,6 +1,6 @@
 ﻿namespace Afired.StateMachineSystem {
     
-    public interface IStateMachineParameter {
+    public interface IStateMachine {
         
     }
     

@@ -2,11 +2,15 @@
 
 namespace Afired.StateMachineSystem {
     
-    public class State : MonoBehaviour {
+    public abstract class State<T> : MonoBehaviour, IState<T> where T : IStateMachine/*, new()*/ {
         
-        public virtual void OnStateEnter() { }
-        public virtual void OnStateUpdate() { }
-        public virtual void OnStateExit() { }
+        void IState<T>.OnStateEnter(T stateMachine) => OnStateEnter(stateMachine);
+        void IState<T>.OnStateUpdate(T stateMachine) => OnStateUpdate(stateMachine);
+        void IState<T>.OnStateExit(T stateMachine) => OnStateExit(stateMachine);
+        
+        protected virtual void OnStateEnter(T stateMachine) { }
+        protected virtual void OnStateUpdate(T stateMachine) { }
+        protected virtual void OnStateExit(T stateMachine) { }
         
     }
     

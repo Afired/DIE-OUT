@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Afired.StateMachineSystem.Example {
     
     [RequireComponent(typeof(Movable))]
-    public class JumpingToWalkingTransition : Transition<JumpingState, WalkingState> {
+    public class JumpingToWalkingTransition : Transition<JumpingState, WalkingState, CharacterStateMachine> {
 
         [SerializeField] private float _minJumpTime = 0.2f;
         private Movable _movable;
@@ -13,7 +13,7 @@ namespace Afired.StateMachineSystem.Example {
             _movable = GetComponent<Movable>();
         }
         
-        protected override bool ShouldTransition(JumpingState inState, WalkingState outState) {
+        protected override bool ShouldTransition(JumpingState inState, WalkingState outState, CharacterStateMachine characterStateMachine) {
             return inState.TimeInJump > _minJumpTime && _movable.IsGrounded;
         }
         
