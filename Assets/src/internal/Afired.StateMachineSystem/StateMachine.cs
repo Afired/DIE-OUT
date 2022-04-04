@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Afired.StateMachineSystem {
     
     [DefaultExecutionOrder(-50)]
-    public /*abstract*/ class StateMachine<TStateMachine> : MonoBehaviour, IStateMachine where TStateMachine : StateMachine<TStateMachine>, new() {
+    public abstract class StateMachine<TStateMachine> : MonoBehaviour, IStateMachine where TStateMachine : StateMachine<TStateMachine>, new() {
         
         [field: SerializeField] public State<TStateMachine> StartingState { get; private set; }
         private ICollection<IState<TStateMachine>> _states;

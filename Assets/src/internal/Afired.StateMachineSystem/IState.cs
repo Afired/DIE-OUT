@@ -1,10 +1,10 @@
 ﻿namespace Afired.StateMachineSystem {
     
-    public interface IState<in T> where T : IStateMachine {
+    public interface IState<in TStateMachine> where TStateMachine : IStateMachine, new() {
         
-        internal void OnStateEnter(T stateMachine);
-        internal void OnStateUpdate(T stateMachine);
-        internal void OnStateExit(T stateMachine);
+        internal void OnStateEnter(TStateMachine stateMachine);
+        internal void OnStateUpdate(TStateMachine stateMachine);
+        internal void OnStateExit(TStateMachine stateMachine);
         
     }
     

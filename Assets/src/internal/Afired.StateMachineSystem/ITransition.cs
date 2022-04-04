@@ -2,7 +2,7 @@
 
 namespace Afired.StateMachineSystem {
     
-    public interface ITransition<TStateMachine> where TStateMachine : IStateMachine {
+    public interface ITransition<TStateMachine> where TStateMachine : IStateMachine, new() {
         
         internal abstract bool ShouldTransition(IState<TStateMachine> inState, IState<TStateMachine> outState, TStateMachine stateMachine);
         public abstract Type GetInState();
