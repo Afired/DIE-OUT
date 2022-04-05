@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DieOut.GameModes.Interactions;
+using UnityEngine;
 
 namespace Afired.StateMachineSystem.Example {
     
@@ -7,9 +8,11 @@ namespace Afired.StateMachineSystem.Example {
         
         [SerializeField] private CharacterStateMachine _csm;
         private InputTable _inputTable;
+        private Movable _movable;
         
         private void Awake() {
             _inputTable = new InputTable();
+            _movable = GetComponent<Movable>();
         }
         
         private void OnEnable() {
@@ -27,6 +30,7 @@ namespace Afired.StateMachineSystem.Example {
         private void UpdateParameters() {
             _csm.Parameter.HorizontalInput = _inputTable.CharacterControls.Move.ReadValue<Vector2>();
             _csm.Parameter.JumpInput = _inputTable.CharacterControls.Jump.ReadValue<float>() != 0;
+            _csm.Parameter.IsGrounded = _movable.IsGrounded;
         }
         
         private void OnDestroy() {
